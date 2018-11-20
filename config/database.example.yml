@@ -1,0 +1,11 @@
+test:
+  adapter: postgresql
+  database: currency_test
+  pool: 5
+  timeout: 5000
+
+development:
+  adapter: postgresql
+  database: currency_development
+  pool: 5
+  timeout: 5000
