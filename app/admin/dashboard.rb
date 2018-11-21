@@ -1,33 +1,17 @@
-ActiveAdmin.register_page "Dashboard" do
-
-  menu priority: 1, label: proc{ I18n.t("active_admin.dashboard") }
-
-  content title: proc{ I18n.t("active_admin.dashboard") } do
-    div class: "blank_slate_container", id: "dashboard_default_message" do
-      span class: "blank_slate" do
-        span I18n.t("active_admin.dashboard_welcome.welcome")
-        small I18n.t("active_admin.dashboard_welcome.call_to_action")
+ActiveAdmin.register_page 'Dashboard' do
+  content title: proc { I18n.t('active_admin.dashboard.title') } do
+    div class: 'blank_slate_container' do
+      div class: 'force_rate_container' do
+        render partial: 'admin/force_rate'
       end
     end
+  end
 
-    # Here is an example of a simple dashboard with columns and panels.
-    #
-    # columns do
-    #   column do
-    #     panel "Recent Posts" do
-    #       ul do
-    #         Post.recent(5).map do |post|
-    #           li link_to(post.title, admin_post_path(post))
-    #         end
-    #       end
-    #     end
-    #   end
+  controller do
+    before_action :set_resource
 
-    #   column do
-    #     panel "Info" do
-    #       para "Welcome to ActiveAdmin."
-    #     end
-    #   end
-    # end
-  end # content
+    def set_resource
+      @resource = ForceRate.first_or_initialize
+    end
+  end
 end

@@ -1,0 +1,7 @@
+<%= semantic_form_for [:admin, @resource] do |f| %>
+  <%= f.inputs t('active_admin.dashboard.force_rate') do %>
+    <%= f.input :rate %>
+    <%= f.input :expired_at, as: :date_time_picker, picker_options: { min_date: Date.current, max_date: 2.days.from_now } %>
+  <% end %>
+  <%= f.button t('active_admin.dashboard.push') %>
+<% end %>

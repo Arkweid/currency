@@ -1,0 +1,6 @@
+en:
+  active_admin:
+    dashboard:
+      title: Dashboard
+      push: Push!
+      force_rate: Force Rate

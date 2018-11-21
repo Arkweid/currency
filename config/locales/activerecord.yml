@@ -1,0 +1,11 @@
+en:
+  activerecord:
+    errors:
+      models:
+        force_rate:
+          attributes:
+            expired_at:
+              on_or_after: "must be on or after %{restriction} UTC"
+              before: "must be before %{restriction} UTC"
+            base:
+              single_record: Only one record allowed

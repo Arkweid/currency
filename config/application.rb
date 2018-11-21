@@ -10,6 +10,8 @@ module Currency
   class Application < Rails::Application
     config.load_defaults 5.2
 
+    config.active_record.default_timezone = :utc
+
     config.generators do |g|
       g.test_framework false
       g.stylessheets   false

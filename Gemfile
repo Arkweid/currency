@@ -33,7 +33,11 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'devise', '~> 4.5'
-gem 'activeadmin'
+
+gem 'activeadmin', '~> 1.4'
+gem 'activeadmin_addons'
+
+gem 'validates_timeliness'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
