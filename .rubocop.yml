@@ -1,0 +1,44 @@
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - config/**/*
+    - db/**/*
+    - lib/tasks/*
+    - Guardfile
+    - Capfile
+    - Gemfile
+    - Rakefile
+    - spec/spec_helper.rb
+    - spec/rails_helper.rb
+    - spec/support*
+    - bin/*
+  UseCache: false
+
+Metrics/LineLength:
+  Exclude:
+    - spec/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+
+Style/NestedParenthesizedCalls:
+  Exclude:
+    - spec/**/*
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - spec/**/*
+
+
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/LambdaCall:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120

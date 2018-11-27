@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register_page 'Dashboard' do
   content title: proc { I18n.t('active_admin.dashboard.title') } do
     div class: 'blank_slate_container' do
-      div class: 'force_rate_container' do
+      div class: 'force-rate-container' do
         render partial: 'admin/force_rate'
       end
     end

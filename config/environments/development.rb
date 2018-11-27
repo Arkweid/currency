@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -16,19 +18,21 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp', 'caching-dev.txt').exist?
     config.action_controller.perform_caching = true
-
-    config.cache_store = :memory_store
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
-
-    config.cache_store = :null_store
   end
+
+  config.cache_store = :redis_store,
+                       ENV.fetch('REDIS_URL') { 'redis://localhost:6379/0/cache' },
+                       { expires_in: 90.minutes }
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
   config.active_storage.service = :local
+
+  config.active_job.queue_adapter = :sidekiq
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false

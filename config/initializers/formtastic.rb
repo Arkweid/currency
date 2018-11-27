@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # By creating custom input class finder, you can change how input classes  are looked up.
 # For example you can make it to search for TextInputFilter instead of TextInput.
 # NOTE: this behavior will be default from Formtastic 4.0
