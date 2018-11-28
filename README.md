@@ -7,6 +7,7 @@ example in database.example.yml
 * Setup
 
 rake db:setup
+
 foreman start
 
 * Ruby version
@@ -16,7 +17,9 @@ foreman start
 * System dependencies
 
 postgres
+
 sidekiq
+
 redis
 
 * How to run the test suite
